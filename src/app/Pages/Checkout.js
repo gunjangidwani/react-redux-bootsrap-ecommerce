@@ -23,8 +23,8 @@ function Checkout() {
   const totalAmmount = totalPrice(state);
   const goToCart = () => {
     navigate("/cart");
-}
-// console.log(carts, "carta");
+  }
+  // console.log(carts, "carta");
   return (
     <Fragment>
       <TopNavbar />
@@ -47,21 +47,14 @@ function Checkout() {
           <div className="my-3">
             {/* <Card> */}
             <Row>
-              <Col xs={9}>
-              <h3>
-                Billing Details
-              </h3>
+              <Col xs={12} md={8}>
                 <Shipping />
-                <h3>
-                Payment Details
-              </h3>
-                <Billing />
               </Col>
-              <Col xs={3}>
-              <h3>
-                Order Summery
-              </h3>
-              {carts.length > 0 &&
+              <Col xs={12} md={4}>
+                <h3>
+                  Order Summery
+                </h3>
+                {carts.length > 0 &&
             carts.map((c) => {
               return (
                 <Col key={c.id}>
@@ -69,9 +62,9 @@ function Checkout() {
                 </Col>
               );
             })}
-            <Card>
-              
-            <Card.Body>
+                <Card>
+
+                <Card.Body>
                 <div className="d-flex justify-content-around ">
                   <div className="w-100 align-middle">
                     <h6 className="fs-8 align-middle d-inline">
@@ -87,11 +80,10 @@ function Checkout() {
                     </h6>
                   </div>
                 </div>
-              </Card.Body>
-            </Card>
+                </Card.Body>
+                </Card>
               </Col>
             </Row>
-
             {/* </Card> */}
           </div>
         )}

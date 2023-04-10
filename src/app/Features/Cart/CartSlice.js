@@ -7,6 +7,9 @@ const CartSlice = createSlice({
       ? JSON.parse(localStorage.getItem("carts"))
       : localStorage.setItem("carts", JSON.stringify([])),
     error: null,
+    billingData: {},
+    shippingData: {},
+    orderDetails: []
   },
   reducers: {
     addToCarts: (state, action) => {
@@ -98,6 +101,12 @@ const CartSlice = createSlice({
       //update the localstorage value
       localStorage.setItem("carts", JSON.stringify(state.carts));
     },
+    addShippingDetails: (state, action) => {
+      state.shippingData = action.payload
+    },
+    addBillingDetails: (state, action) => {
+      state.billingData = action.payload
+    }
   },
 });
 
@@ -110,6 +119,8 @@ export const {
   increaseQuantity,
   decreaseQuantity,
   removeFormCart,
+  addShippingDetails,
+  addBillingDetails,
 } = CartSlice.actions;
 
 //export default slice

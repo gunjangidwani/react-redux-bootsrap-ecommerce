@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import TopNavbar from "../../../Coponents/Header/TopNavbar";
 import "./ProductDetails.css";
 import { FaPlus, FaMinus } from "react-icons/fa";
@@ -15,7 +15,7 @@ function SingleProductDetails() {
   const { products } = useSelector((state) => state.products);
 
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   //increase item quantity
   const increaseQunaity = (e) => {
     e.preventDefault();
@@ -39,6 +39,17 @@ function SingleProductDetails() {
     };
     dispatch(addToCarts(item));
   };
+
+  const buyNow =(e) => {
+    e.preventDefault();
+    let item = {
+      id: parseInt(productId),
+      quantity: quantity,
+      price: product.price,
+    };
+    dispatch(addToCarts(item));
+    navigate("/checkout")
+  }
 
   //use effect function to find the product from all products
   useEffect(() => {
@@ -93,7 +104,7 @@ function SingleProductDetails() {
                   </button>
                 </div>
                 <div className="">
-                  <Button variant="dark" className="me-2">
+                  <Button variant="dark" className="me-2" onClick={buyNow}>
                     Buy Now
                   </Button>
                   <Button

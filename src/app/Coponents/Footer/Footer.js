@@ -4,7 +4,7 @@ import RightCartIcon from "../Cart/RightCartIcon";
 function Footer() {
   return (
     <Fragment>
-      <RightCartIcon />
+      {/* <RightCartIcon /> */}
       <div className="text-center bg-dark text-white py-2 fixed-bottom">
         <span>
           Copyright & Developed by{" "}

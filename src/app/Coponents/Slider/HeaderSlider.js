@@ -15,9 +15,7 @@ function HeaderSlider() {
           <Carousel.Caption className="bg-white">
             <h5>Summer Collection Pure PU Ladies Shoulder Bag </h5>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            <div className="mb-3">
-              <Button variant="dark">Shop Now</Button>
-            </div>
+           
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -30,9 +28,7 @@ function HeaderSlider() {
           <Carousel.Caption className="bg-white">
             <h5>100% Cotton Men Blac Suits</h5>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            <div className="mb-3">
-              <Button variant="dark">Shop Now</Button>
-            </div>
+            
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -45,9 +41,7 @@ function HeaderSlider() {
           <Carousel.Caption className="bg-white">
             <h5>Decorate Your Smart Kitchen</h5>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            <div className="mb-3">
-              <Button variant="dark">Shop Now</Button>
-            </div>
+            
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

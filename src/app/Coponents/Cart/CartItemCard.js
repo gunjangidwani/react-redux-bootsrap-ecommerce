@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Button, Card } from "react-bootstrap";
-import { FaMinus, FaPlus } from "react-icons/fa";
+import { FaMinus, FaPlus, FaTrash } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import {
@@ -53,15 +53,18 @@ function CartItemCard({ item, hide }) {
             </div>
            { !hide && <div className="d-flex w-100 justify-content-center">
               <button
-                className="btn btn-sm btn-dark fs-6 me-3 text-center"
+                className="btn btn-sm btn-dark me-3 text-center"
                 onClick={decreaseItemQunaity}
+                style={{ maxHeight: 36}}
+
               >
                 <FaMinus />
               </button>
               <span className="fs-4">{product.quantity}</span>
               <button
-                className="btn btn-sm btn-dark fs-6 ms-3 text-center"
+                className="btn btn-sm btn-dark ms-3 text-center"
                 onClick={increaseItemQuantity}
+                style={{ maxHeight: 36}}
               >
                 <FaPlus />
               </button>
@@ -76,7 +79,7 @@ function CartItemCard({ item, hide }) {
             </div>
             <div className="w-100 text-center">
               <Button variant="danger" onClick={removeItem}>
-                Remove
+                <FaTrash />
               </Button>
             </div>
           </div>

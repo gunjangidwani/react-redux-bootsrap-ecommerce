@@ -2,7 +2,10 @@ import React, { useEffect } from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
+import Badge from 'react-bootstrap/Badge';
 import { fetchAllCategories } from "../../Features/Category/CategorySlice";
+import { HiShoppingCart } from "react-icons/hi";
+import { totalCartItem } from "../../Features/Cart/CartSelector";
 
 function TopNavbar() {
   const { categories } = useSelector((state) => state.categories);
@@ -10,7 +13,8 @@ function TopNavbar() {
   useEffect(() => {
     dispatch(fetchAllCategories());
   }, [dispatch]);
-
+  let state = useSelector((state) => state);
+  let totalItems = totalCartItem(state);
   return (
     <Navbar bg="dark" expand="lg" variant="dark">
       <Container>
@@ -42,6 +46,18 @@ function TopNavbar() {
             </NavLink>
             <NavLink to={"/contact"} className="nav-link">
               Contact
+            </NavLink>
+            <NavLink to={"/cart"} className="nav-link">
+              <div className="cart-icon">
+                {/* <div className="d-flex flex-column"> */}
+                  <span>
+                    <HiShoppingCart />
+                    <Badge pill text="dark" bg="danger" className="bg">
+                      {totalItems}
+                    </Badge>
+                  </span>
+                {/* </div> */}
+              </div>
             </NavLink>
           </Nav>
         </Navbar.Collapse>
