@@ -20,9 +20,9 @@ function OrderConfirm() {
         </p>
         <hr />
         <div className="d-flex justify-content-end">
-          <Button onClick={() => setShow(false)} variant="outline-success">
+          {/* <Button onClick={() => setShow(false)} variant="outline-success">
             Close me y'all!
-          </Button>
+          </Button> */}
         </div>
       </Alert>
         </Row>
